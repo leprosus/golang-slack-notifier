@@ -29,7 +29,6 @@ func (slack *Slack) Face(face string) {
 
 func (slack Slack) Notify(username string, text string) error {
 	json := buildRequest(username, text, slack)
-	println(json)
 
 	req, err := http.NewRequest("POST", slack.webHook, strings.NewReader(json))
 	if err != nil {
